@@ -1,0 +1,324 @@
+.dashboard {
+  max-width: 1300px;
+  margin: auto;
+  padding: 24px;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dash-header p {
+  color: #64748b;
+}
+
+.dash-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.stat {
+  background: white;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.stat span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.stat.blue {
+  border-left: 5px solid #2563eb;
+}
+.stat.red {
+  border-left: 5px solid #ef4444;
+}
+.stat.yellow {
+  border-left: 5px solid #facc15;
+}
+.stat.green {
+  border-left: 5px solid #22c55e;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+/* MAP */
+.map-card #admin-map {
+  height: 320px;
+  margin-top: 12px;
+  border-radius: 14px;
+}
+
+.legend {
+  margin-top: 10px;
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.low {
+  background: #22c55e;
+}
+.medium {
+  background: #facc15;
+}
+.high {
+  background: #ef4444;
+}
+
+/* SIDE */
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* QUICK ACTIONS */
+.quick-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  margin: 8px 0px 0px 0px;
+}
+
+.quick-action:hover {
+  background: #f97316;
+  color: white;
+  border-color: #f97316;
+}
+
+/* .quick-action.primary {
+  background: #f97316;
+  color: white;
+  border-color: #f97316;
+} */
+
+/* RECENT REPORTS */
+.recent-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.recent-item:last-child {
+  border-bottom: none;
+}
+
+.recent-item small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status.high {
+  background: #ef4444;
+}
+.status.medium {
+  background: #facc15;
+}
+
+/* TABLE */
+.table-card {
+  margin-top: 24px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pill.high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.pill.medium {
+  background: #fef9c3;
+  color: #92400e;
+}
+.pill.low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* =========================
+   ADMIN RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #admin-map {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .recent-item {
+    grid-template-columns: 1fr auto;
+    row-gap: 4px;
+  }
+}
+
+/* =========================
+   MOBILE: SINGLE COLUMN DASHBOARD
+========================= */
+
+@media (max-width: 768px) {
+  /* stats cards */
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* main dashboard grid */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #admin-map {
+    height: 280px;
+  }
+
+  /* quick actions */
+  .quick-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   MOBILE: TABLE → CARD VIEW
+========================= */
+
+@media (max-width: 768px) {
+  .dash-header {
+    display: block;
+  }
+
+  .dash-actions {
+    margin-top: 14px;
+  }
+
+  .grid {
+    display: block;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 13px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #64748b;
+  }
+}

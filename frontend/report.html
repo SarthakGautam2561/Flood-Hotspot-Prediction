@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Report Waterlogging | Delhi Flood Watch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- GOOGLE MAPS (PUT REAL KEY) -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=REMOVED_API_KEY&callback=initMap"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/report.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">
+    <div class="logo">💧</div>
+    <div class="logo-text">
+      <h3>Delhi Flood Watch</h3>
+      <p>Smart City Initiative</p>
+    </div>
+  </div>
+
+  <nav class="nav-right">
+    <a href="index.html">Map View</a>
+    <a class="active">Report</a>
+    <a href="admin.html">Dashboard</a>
+  </nav>
+</header>
+
+<!-- PAGE -->
+<main class="page">
+
+  <div class="page-header">
+    <h1>Report Waterlogging</h1>
+    <p>Help authorities respond faster by reporting waterlogged areas in your vicinity</p>
+  </div>
+
+  <div class="content">
+
+    <!-- LEFT -->
+    <section class="left">
+      <div class="map-wrapper">
+        <div class="map-header">
+          <strong>Select Location</strong>
+          <span>Click on the map to mark the waterlogging location</span>
+        </div>
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <!-- RIGHT -->
+    <section class="right">
+
+      <div class="card info">
+        <strong>Instructions</strong>
+        <ul>
+          <li>Select the exact location on the map</li>
+          <li>Rate the severity of waterlogging (1–5)</li>
+          <li>Add a photo if possible (optional)</li>
+          <li>Include any relevant details</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <label>Severity Level <span>*</span></label>
+        <div class="severity">
+          <button onclick="setSeverity(1)">1</button>
+          <button onclick="setSeverity(2)">2</button>
+          <button onclick="setSeverity(3)">3</button>
+          <button onclick="setSeverity(4)">4</button>
+          <button onclick="setSeverity(5)">5</button>
+        </div>
+
+        <label>Photo Evidence (Optional)</label>
+        <div class="upload-box">
+          <input type="file" />
+          <p>Click to upload or drag and drop<br><small>PNG, JPG up to 10MB</small></p>
+        </div>
+
+        <label>Additional Details (Optional)</label>
+        <textarea placeholder="Describe the waterlogging situation, nearby landmarks, traffic impact..."></textarea>
+      </div>
+
+      <button type="button" class="submit" onclick="submitReportForm()">🚀 Submit Report</button>
+
+    </section>
+
+  </div>
+</main>
+
+<script src="js/report.js"></script>
+</body>
+</html>

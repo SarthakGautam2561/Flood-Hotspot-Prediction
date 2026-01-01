@@ -1,0 +1,27 @@
+#map {
+  width: 100%;
+  height: calc(100vh - 64px);
+  background: #eaf2fb;
+}
+
+/* =========================
+   MAP VIEW RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  #map {
+    height: calc(100vh - 140px);
+  }
+
+  .left-panel {
+    position: static;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .report-btn {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

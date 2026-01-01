@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Authority Dashboard | Delhi Flood Watch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=REMOVED_API_KEY&libraries=visualization&callback=initMap"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="logo">💧</div>
+        <div class="logo-text">
+          <h3>Delhi Flood Watch</h3>
+          <p>Smart City Initiative</p>
+        </div>
+      </div>
+
+      <nav class="nav-right">
+        <a href="index.html">Map View</a>
+        <a href="report.html">Report</a>
+        <a class="active">Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="dashboard">
+      <!-- HEADER -->
+      <div class="dash-header">
+        <div>
+          <h1>Authority Dashboard</h1>
+          <p>Real-time flood monitoring and risk assessment for Delhi NCR</p>
+        </div>
+        <div class="dash-actions">
+          <button class="btn secondary">⟳ Refresh</button>
+          <button class="btn primary">⬇ Export Report</button>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <section class="stats">
+        <div class="stat blue">
+          <p>Total Reports Today</p>
+          <h2 id="totalReports">87</h2>
+          <span>+12 from yesterday</span>
+        </div>
+
+        <div class="stat red">
+          <p>High Risk Zones</p>
+          <h2 id="highRisk">6</h2>
+          <span>Active alerts</span>
+        </div>
+
+        <div class="stat yellow">
+          <p>Medium Risk Zones</p>
+          <h2 id="mediumRisk">11</h2>
+          <span>Under monitoring</span>
+        </div>
+
+        <div class="stat green">
+          <p>Response Rate</p>
+          <h2 id="responseRate">94%</h2>
+          <span>Avg. 23 min response</span>
+        </div>
+      </section>
+
+      <!-- GRID -->
+      <section class="grid">
+        <!-- MAP -->
+        <div class="card map-card">
+          <div class="card-head">
+            <strong>Flood Risk Heatmap</strong>
+            <span>Live flood hotspot visualization</span>
+          </div>
+
+          <div id="admin-map"></div>
+
+          <div class="legend">
+            <span><i class="low"></i> Low</span>
+            <span><i class="medium"></i> Medium</span>
+            <span><i class="high"></i> High</span>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="side">
+          <!-- QUICK ACTIONS -->
+          <div class="card">
+            <strong>Quick Actions</strong>
+
+            <div class="quick-action">
+              🚨 <span>Issue City-wide Alert</span>
+            </div>
+            <div class="quick-action">📍 <span>Mark High-Risk Zone</span></div>
+            <div class="quick-action">📄 <span>Generate Report</span></div>
+          </div>
+
+          <!-- RECENT REPORTS -->
+          <div class="card">
+            <strong>Recent Reports</strong>
+
+            <div class="recent-item">
+              <span>ITO Crossing</span>
+              <div class="status high"></div>
+              <small>10 min ago</small>
+            </div>
+
+            <div class="recent-item">
+              <span>Mayur Vihar Phase-1</span>
+              <div class="status high"></div>
+              <small>25 min ago</small>
+            </div>
+
+            <div class="recent-item">
+              <span>Kashmere Gate</span>
+              <div class="status medium"></div>
+              <small>1 hr ago</small>
+            </div>
+
+            <div class="recent-item">
+              <span>Rohini Sector-15</span>
+              <div class="status medium"></div>
+              <small>2 hrs ago</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TABLE -->
+      <section class="card table-card">
+        <strong>Ward-wise Flood Risk</strong>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Ward / Area</th>
+                <th>Zone</th>
+                <th>Risk Level</th>
+                <th>Reports</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody id="ward-table-body">
+              <!-- <tr>
+                <td data-label="Ward / Area">Connaught Place</td>
+                <td data-label="Zone">Central</td>
+                <td data-label="Risk Level"><span class="pill high">High</span></td>
+                <td data-label="Reports">24</td>
+                <td data-label="Updated">2 hrs ago</td>
+              </tr>
+              <tr>
+                <td data-label="Ward / Area">Mayur Vihar Phase-1</td>
+                <td data-label="Zone">East</td>
+                <td data-label="Risk Level"><span class="pill high">High</span></td>
+                <td data-label="Reports">18</td>
+                <td data-label="Updated">1 hr ago</td>
+              </tr>
+              <tr>
+                <td data-label="Ward / Area">Kashmere Gate</td>
+                <td data-label="Zone">North</td>
+                <td data-label="Risk Level"><span class="pill medium">Medium</span></td>
+                <td data-label="Reports">12</td>
+                <td data-label="Updated">3 hrs ago</td>
+              </tr>
+              <tr>
+                <td data-label="Ward / Area">Dwarka Sector-12</td>
+                <td data-label="Zone">South-West</td>
+                <td data-label="Risk Level"><span class="pill low">Low</span></td>
+                <td data-label="Reports">3</td>
+                <td data-label="Updated">6 hrs ago</td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Delhi Flood Watch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/map.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="logo">💧</div>
+        <div class="logo-text">
+          <h3>Delhi Flood Watch</h3>
+          <p>Smart City Initiative</p>
+        </div>
+      </div>
+
+      <nav class="nav-right">
+        <a class="active">Map View</a>
+        <a href="report.html">Report</a>
+        <a href="admin.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <!-- MAP -->
+    <div id="map"></div>
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+      <div class="card alert">
+        <strong>⚠ Active Alert</strong>
+        <p>Heavy rainfall expected in East Delhi. Stay vigilant.</p>
+      </div>
+
+      <div class="card">
+        <h4>Risk Levels</h4>
+        <ul class="risk-list">
+          <li>
+            <span class="dot green"></span> Low Risk <small>Safe zone</small>
+          </li>
+          <li>
+            <span class="dot yellow"></span> Medium Risk
+            <small>Monitor area</small>
+          </li>
+          <li>
+            <span class="dot red"></span> High Risk <small>Flood prone</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- REPORT BUTTON -->
+    <a href="report.html" class="report-main-btn">⚠ Report Waterlogging</a>
+
+    <!-- ABOUT -->
+    <div class="about-card">
+      <strong>ℹ About This Platform</strong>
+      <p>
+        Real-time flood prediction and citizen reporting system for Delhi NCR.
+        Help us identify waterlogging hotspots.
+      </p>
+      <small>Delhi NCR Region • Civic Data</small>
+    </div>
+
+    <script src="js/map.js"></script>
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=REMOVED_API_KEY&libraries=visualization&callback=initMap"></script>
+  </body>
+</html>
